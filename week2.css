@@ -228,12 +228,15 @@ img {
     /* 不是滿版的元素  通常需要
     加上container來限制寬度
     */
-    width: 1296px;
+    max-width: 1296px;
     margin: 0 auto;
 }
 
 .h1 {
     font-size: 128px;
+}
+.banner-fontsize {
+    font-size: 64px;
 }
 
 .h2 {
@@ -314,6 +317,10 @@ img {
 
 .pt-10 {
     padding-top: 40px;
+}
+
+.pt-25 {
+    padding-top: 100px;
 }
 
 .pt-24 {
