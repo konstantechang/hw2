@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./week2.css">
+</head>
+<body>
+    <!-- 並列的情況  適合用flex排版    
+     因為block元素預設會自然地往下排列 
+     為了改變它們的預設排列方式，我們可以在它們的外容器上使用 display: flex; 來讓它們並排排列
+
+     
+    -->
+    <header class="header">
+        <ul class="container nav"><!-- 為了讓背景顏色(設在.header)不限縮在container內 -->
+            <!-- 外容器內元素的排列一樣是設定在外容器內    -->
+            <li>WILLIAM</li>
+            <li>BASED IN TAIWAN</li>
+            <li>
+                CURRENTLY FRONT END <br />
+                ENGINEER AT HEXSCHOOL
+            </li>
+            <li>CONTACT ME</li>
+        </ul>
+    </header>
+    <div class="banner">
+        <div class="container d-flex .align-items-center">
+            
+            <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/people.png?raw=true
+            " alt="">
+            <!-- 圖片和文字間要有24px的間距 -->
+            <div>
+                <h1 class="h1">Hi<br />
+                     I'm A FRONT-END DEVELOPER 
+                     <span class="banner-title-strong h1 text-primary">William</span>
+                </h1>
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-light">contact me<img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/arrow_outward.png?raw=true" alt="" /></a>
+                </div>   
+                
+            </div>
+            
+        </div>
+    </div>
+    <!-- intro     
+     第二個區塊   背景是一張圖片 -->
+     <div class="intro">
+        <div class="container d-flex">
+            <div class="intro-desc">
+                <!-- todo    尚有行高需要調整 -->
+                <h2 class="h2">Introduction</h2>
+                <p>Hi, I'm William Lee, a Front-End Developer with a passion for building beautiful and responsive websites that provide an optimal user experience.</p>
+                <!-- img為inline元素  因此會自動水平排列  不需使用flex -->
+                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/sparkle-sm.png?raw=true" alt="">
+                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/sparkle-sm.png?raw=true" alt="">
+                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/sparkle-sm.png?raw=true" alt="">
+                
+            </div>
+                
+            <ul class="d-flex">
+                <li class="mr-6"><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/sparkle.png?raw=true" alt=""></li>
+                <li class="mr-6"><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/photographer.png?raw=true" alt=""></li>
+                <li><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/people-2.png?raw=true" alt=""></li>
+            </ul>
+        </div>
+     </div>
+
+     <div class="about">
+        <!-- 下一個區塊    about
+        有換行的 
+        左邊4個結構很像的元素
+        用有序清單  <ol>
+        -->
+            <div class="container d-flex justify-content-between align-items-center">
+                <ol class="about-list d-flex"> <!-- flex 換行預設值是  flex-wrap:nowrap 因此需在外容器 設定 flex-wrap:wrap -->
+                    <li class="mb-6">
+                        <p>01</p>
+                        <h3>Attention to Detail</h3>
+                        <p>Meticulous code analysis and optimization.</p>
+                    </li>
+                    <li class="mb-6">
+                        <p>02</p>
+                        <h3>Adaptability</h3>
+                        <p>Swift learning of new technologies.</p>
+                    </li>
+                    <li>
+                        <p>03</p>
+                        <h3>Problem Solver</h3>
+                        <p>Identifying and resolving issues.</p>
+                    </li>
+                    <li>
+                        <p>04</p>
+                        <h3>Team Player</h3>
+                        <p>Collaborates and shares ideas.</p>
+                    </li>
+                </ol>
+                <div class="about-desc">
+                    <h2 class="h2">About Me</h2>
+                    <p>With over 5 years of experience, I'm proficient in HTML, CSS, JavaScript, jQuery, and React. I have a strong understanding of user experience design and accessibility. I'm always learning new technologies and techniques to stay up-to-date in the field.</p>
+                </div>
+            </div>
+
+     </div>
+
+     <!-- 下一個 contact 區塊 有漸層的背景-->
+     <div class="contact">
+        <div class="container d-flex justify-content-between align-items-center pt-24 pb-24">
+
+            <div class="d-flex align-items-center">
+                <p>CONTACT ME</p>
+                <img class="ml-4" src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/trending_flat_black_24dp%201.png?raw=true" alt="">
+            </div>
+            <ul class="d-flex">
+                <li><a class="social-link" href="#"><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/discord.png?raw=true" alt=""></a></li>
+                <li class="ml-5"><a class="social-link" href="#"><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/instagram.png?raw=true" alt=""></a></li>
+                <li class="ml-5"><a class="social-link" href="#"><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/message.png?raw=true" alt=""></a></li>
+                
+            </ul>
+
+            
+                
+        </div>
+     </div>
+
+     <!-- 下一個 project -->
+     <div class="project">
+        <div class="container pt-40 pb-40">
+            <h2 class="h2 project-title">My Projects</h2>
+            <div class="d-flex mt-4">
+                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/Rectangle%2010.png?raw=true" alt="">
+                <div">
+                    <div class="d-flex ml-6">
+                        <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/Rectangle%2015.png?raw=true" alt="">
+                        <div id="不讓按鈕也被上層容器flex影響成水平排列" class="d-flex flex-column justify-content-between align-items-start ml-6">
+                            <p>I've worked on a variety of websites, including e-commerce sites, blogs, and landing pages. I take pride in creating clean, efficient, and user-friendly code.</p>
+                            <a href="#" class="btn btn-dark">SEE MORE<img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/arrow_outward-white.png?raw=true" alt="" /></a> <!-- 按鈕套用和最上面區塊一樣的樣式 -->
+                        </div>
+                        
+                    </div>
+
+                    <ul class="d-flex mt-7 ml-6">
+                        <li><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/Rectangle%2014.png?raw=true" alt=""></li>
+                        <li class="ml-6"><img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/Rectangle%2029.png?raw=true" alt=""></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+        </div>
+     </div>
+
+        <!-- 下一個 footer -->
+        
+     <footer class="footer bg-dark pt-10 pb-10">
+        <p>all rights reserved @hexschool2023</p>
+     </footer>
+    
+     
+    
+</body>
+</html>

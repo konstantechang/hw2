@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    font-family: "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+*,*::before, *::after {
+    box-sizing: border-box;
+
+/*     outline: dashed 1px goldenrod;
+ */    
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;/* 消除下面的空白 */
+}
+
+/* layout */
+.header {
+    background: #000;
+    color: #D1D1D1;
+    padding: 40px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    /* 垂直方向的排版 */
+    align-items: center;
+}
+
+/* component 
+    複數個有相同特徵的元素
+    其共同部份抽出來
+    寫成component
+*/
+.btn {
+    /* padding 上下是12px 左右是24px*/
+    padding: 12px 24px;
+    border-radius: 32px;
+}
+
+.btn-dark {
+    background: #000;
+    color: #fff;
+}
+
+.btn-light {
+    background: #fff;
+    color: #000;
+}
+
+
+/* page   只有這個頁面會出現的元素 */
+.banner {
+    background: #000;
+    color: #fff;
+}
+
+.banner-title-strong {
+    /* 因為 William 這個字保在<span>內
+    而<span>是個inline元素, 會緊緊包住William這個字 
+    所以用text-align對齊沒有意義  因沒有多餘的空間
+    讓它對齊, 所以用display:block 讓它變成block元素 
+    */
+    display: block;
+    text-align: right;
+
+}
+
+.intro {
+    /* 滿版背景圖片  頁面特有效果 */
+    /*
+    img和background-image的差異是在
+    background-image通常用在裝飾性
+    而img通常用在內容性, 有語義的場合 
+     */
+    background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2023week2/background-img.png?raw=true");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 160px 0; /* 用padding 撐開    看起來比較不會有壓迫感 */
+}
+
+.intro-desc {
+    width: 526px;
+
+}
+
+.about {
+    padding: 160px 0;
+}
+
+.about-list {
+    width: 636px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+/*     gap: 24px;
+ */}
+
+.about-list li {
+    /* 用  justify-content:spacebetween 再配合下面元素width由50%減為48%讓中間留出空格會較不精確可能無法達到設計稿要求的134px */
+/*     width: 48%;
+ */
+    /* 第二種推出元素之間空間 的方法  使用calc計算 */
+    width: calc(50% - 12px); /* + - * / 運算子左右一定要有空白 */
+
+    /* 第三種方法  使用gap屬性 但要設在上層元素 */
+
+    border: solid 1px #E3E3E3;
+
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.08);
+
+
+}
+
+.about-desc {
+    width: 526px;
+}
+
+.contact {
+    background: linear-gradient(180deg, #050014 0%, rgba(1, 2, 30, 0.89) 100%);
+
+}
+
+.contact p {
+    font-size: 64px;
+    color: #fff;
+}
+
+.social-link {    
+    border-radius: 40px;
+    /* transition 要設定在原本的元素上而不是hover狀態上   如此cursor移入和移出時才會有發亮的效果，否則只有在cursor移入時有敦果 */
+    transition: 1s;
+}
+
+.social-link:hover {
+    box-shadow: 0px 0px 16px 3px rgba(144, 148, 255, 0.9);
+    
+
+}
+
+.project {
+    padding: 160px 0;
+}
+
+.project-title {
+    width: 746px;
+    margin-left: auto;
+}
+
+
+/* 以下為 footer */
+.footer {
+    text-align: center;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* 以下為 utilities */
+.container {
+    /* 不是滿版的元素  通常需要
+    加上container來限制寬度
+    */
+    width: 1296px;
+    margin: 0 auto;
+}
+
+.h1 {
+    font-size: 128px;
+}
+
+.h2 {
+    font-size: 40px;
+}
+
+.fs-1 {
+    font-size: 32px;
+}
+
+.fs-2 {
+    font-size: 24px;
+}
+
+.fs-3 {
+    font-size: 20px;
+}
+
+/* 網站顏色去掉黑白外此次以第3個螢光綠為主色
+    第4個為漸層色, 主要為背景使用
+    */
+.text-primary {
+    
+    color: #00FFA3;
+}
+
+.d-flex {
+    display: flex;
+}
+
+
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+
+.align-items-center {
+    align-items: center;
+}
+
+.mr-6 {
+    margin-right: 24px;
+}
+
+.mb-6 {
+    margin-bottom: 24px;
+}
+
+.ml-4 {
+    margin-left: 16px;
+}
+
+.ml-5 {
+    margin-left: 20px;
+}
+
+.ml-6 {
+    margin-left: 24px;
+}
+
+.mt-7 {
+    margin-top: 28px;
+}
+
+.pt-10 {
+    padding-top: 40px;
+}
+
+.pt-24 {
+    padding-top: 96px;
+}
+
+.pt-40 {
+    padding-top: 160px;
+}
+
+.pb-10 {
+    padding-bottom: 40px;
+}
+
+.pb-24 {
+    padding-bottom: 96px;
+}
+
+.pb-40 {
+    padding-bottom: 160px;
+}
+
+.bg-dark {
+    background: #000;
+}
